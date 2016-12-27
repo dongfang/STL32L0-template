@@ -1,0 +1,15 @@
+ENTRY(Reset_Handler)
+
+MEMORY
+{
+  /* Here is how to make a FLASH section for data logging. See sections_flash how to use it. */
+  /*FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 48K		*/
+  /* RWFLASH (rx) : ORIGIN = 0x08000000+48K, LENGTH = 16K  */
+  FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 64K
+  EEPROM (r) : ORIGIN = 0x08080000, LENGTH = 0x7FF
+  RAM  (xrw) : ORIGIN = 0x20000000, LENGTH = 8K
+}
+
+_estack = 0x20002000;
+
+
